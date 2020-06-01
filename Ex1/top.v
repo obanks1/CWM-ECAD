@@ -31,6 +31,10 @@ module logicalunit(
     
     wire   out;
          
-      //Todo: add you logic here
+      //Todo: add your logic here
+      //condition ? equation_if_condition_is_true : equation_if_condition_is_false
+
+assign out = a & b ? func[3]: a | b ? a? func[2]:func[1]: func[0];
+
 
 endmodule
