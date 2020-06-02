@@ -22,11 +22,16 @@
 
 module mux(
     //Todo: define inputs here
+    input a,
+    input b,
+    input sel,
+    output out
     );
     
     //Todo: define registers and wires here
+    
 
-
-    //Todo: define your logic here                 
+    //Todo: define your logic here    
+    assign out = sel ? b : a;             
       
 endmodule
