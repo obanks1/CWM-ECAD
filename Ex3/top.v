@@ -20,11 +20,25 @@
 
 module counter(
     //Todo: add ports 
-
+    input clk,
+    input rst,
+    input enable,
+    input direction,
+    output counter_out[7:0]
     );
                     
     //Todo: add registers and wires, if needed
+    reg [7:0] t;
 
     //Todo: add user logic
+    always @(posedge clk or posedge rst)
+      if(rst)
+        t <= 0;
+      else 
+	if(enable)
+	  if(direction)
+            t <= t + 1;
+	  else
+	    t <= t - 1;
       
 endmodule
