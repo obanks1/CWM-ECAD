@@ -31,7 +31,7 @@ module mux(
     //Todo: define registers and wires here
     
 
-    //Todo: define your logic here    
+    //Todo: define your logic here
     assign out = sel ? b : a;             
       
 endmodule
