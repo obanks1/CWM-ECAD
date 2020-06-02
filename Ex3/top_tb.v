@@ -34,15 +34,22 @@ end
 
 //Todo: User logic
 initial begin
-  
+  rst = 1;
+  enable = 1;
+  direction = 1;
   forever begin
-  
+    rst = 0;
+    if (enable == 1)
+      begin
+        $display("***TEST FAILED! counter_out=%d ***", counter_out);
+        err=1;
+      end
   end
 end
     
 //Todo: Finish test, check for success
 initial begin
-  #50 
+  #30
   if (err==0)
     $display("***TEST PASSED! :) ***");
   $finish;
