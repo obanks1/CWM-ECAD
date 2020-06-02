@@ -17,9 +17,9 @@ parameter CLK_PERIOD = 10;
 // Registers and wires
 reg clk;
 reg err;
-reg red;
-reg amber;
-reg green;
+wire red;
+wire amber;
+wire green;
 
 // Clock generation
 initial
@@ -31,9 +31,14 @@ end
 
 // Tests
 initial begin
-
+	err = 0;
 	forever begin
-	
+		#10
+		if(red != 1 || amber != 1 || green != 0)
+			begin
+        		$display("***TEST FAILED! Lights transitioned incorrectly. red=%d amber=%d 						green=%d ***", red, amber, green);
+        		err = 1;
+      		end
 	end
 end
 
@@ -45,8 +50,8 @@ initial begin
   $finish;
 end
 
-// Instantiate lights module
-lights top (
+// Instantiate traffic-lights module
+trafficlights top (
 	.clk (clk),
 	.red (red),
 	.amber (amber),
