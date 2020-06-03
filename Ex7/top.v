@@ -20,6 +20,16 @@ module multiplier (
 	output [4:0] result
 	);
 	
+	bmg multiplier (
+		.clka(clk),    // input wire clka
+		.ena(ena),      // input wire ena
+		.wea(wea),      // input wire [0 : 0] wea
+		.addra(addra),  // input wire [3 : 0] addra
+		.dina(dina),    // input wire [15 : 0] dina
+		.douta(douta)  // output wire [15 : 0] douta
+		);
+		
+	
 	
 	
 endmodule
