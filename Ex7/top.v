@@ -17,16 +17,18 @@ module multiplier (
 	input clk,
 	input [2:0] a,
 	input [2:0] b,
+	input read,
 	output [4:0] result
 	);
 	
-	bmg multiplier (
+	wire [4:0] address;
+	assign address = a*b;
+	
+	bmg bmg (
 		.clka(clk),    // input wire clka
-		.ena(ena),      // input wire ena
-		.wea(wea),      // input wire [0 : 0] wea
-		.addra(addra),  // input wire [3 : 0] addra
-		.dina(dina),    // input wire [15 : 0] dina
-		.douta(douta)  // output wire [15 : 0] douta
+		.ena(read),      // input wire ena
+		.addra(address),  // input wire [3 : 0] addra
+		.douta(result)  // output wire [15 : 0] douta
 		);
 		
 	
