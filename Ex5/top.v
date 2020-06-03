@@ -18,27 +18,36 @@ module trafficlights (
 	output red,
 	output amber,
 	output green,
-	reg [2:0] lights
+	reg [2:0] lights = 1
 	);
+
     
 always @(posedge clk) begin
-	if(lights[0] == 1)
-		if(lights[1] == 0)
+	if(lights[0] == 1) begin
+		if(lights[1] == 0) begin
 			lights[1] <= 1;
-		else
+		end
+		else begin
 			lights[0] <= 0;
 			lights[1] <= 0;
 			lights[2] <= 1;
-	else
-		if(lights[2] == 1)
+		end
+	end
+	else begin
+		if(lights[2] == 1) begin
 			lights[1] <= 1;
 			lights[2] <= 0;
-		else
+		end
+		else begin
 			lights[0] <= 1;
 			lights[1] <= 0;
+		end
+	end
 end
+
 assign red = lights[0];
 assign amber = lights[1];
 assign green = lights[2];
+
 
 endmodule

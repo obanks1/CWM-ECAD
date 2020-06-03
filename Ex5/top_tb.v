@@ -36,7 +36,25 @@ initial begin
 		#10
 		if(red != 1 || amber != 1 || green != 0)
 			begin
-        		$display("***TEST FAILED! Lights transitioned incorrectly. red=%d amber=%d 						green=%d ***", red, amber, green);
+        		$display("***TEST FAILED! Lights transitioned incorrectly. red=%d amber=%d green=%d ***", red, amber, green);
+        		err = 1;
+      		end
+		#10
+		if(red != 0 || amber != 0 || green != 1)
+			begin
+        		$display("***TEST FAILED! Lights transitioned incorrectly. red=%d amber=%d green=%d ***", red, amber, green);
+        		err = 1;
+      		end
+		#10
+		if(red != 0 || amber != 1 || green != 0)
+			begin
+        		$display("***TEST FAILED! Lights transitioned incorrectly. red=%d amber=%d green=%d ***", red, amber, green);
+        		err = 1;
+      		end
+		#10
+		if(red != 1 || amber != 0 || green != 0)
+			begin
+        		$display("***TEST FAILED! Lights transitioned incorrectly. red=%d amber=%d green=%d ***", red, amber, green);
         		err = 1;
       		end
 	end
