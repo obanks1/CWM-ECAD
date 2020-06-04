@@ -16,26 +16,29 @@ set_property BITSTREAM.CONFIG.SPI_FALL_EDGE YES        [current_design]
 
 #############################################################################################################
 
-set_property PACKAGE_PIN AR22 [clk_p]
-set_property IOSTANDARD LVCMOS15 [clk_p]
+set_property PACKAGE_PIN AY37 [clk_p]
+set_property IOSTANDARD DIFF_SSTL12 [clk_p]
 
-set_property PACKAGE_PIN AR22 [clk_n]
-set_property IOSTANDARD LVCMOS15 [clk_n]
+set_property PACKAGE_PIN AY38 [clk_n]
+set_property IOSTANDARD DIFF_SSTL12 [clk_n]
 
-set_property PACKAGE_PIN AR22 [rst_n]
-set_property IOSTANDARD LVCMOS15 [rst_n]
+set_property PACKAGE_PIN BD21 [rst_n]
+set_property IOSTANDARD LVCMOS18 [rst_n]
+set_property PULLUP true [get_ports rst_n]
 
-set_property PACKAGE_PIN AR22 [button]
-set_property IOSTANDARD LVCMOS15 [button]
+set_property PACKAGE_PIN AL20 [button]
+set_property IOSTANDARD LVCMOS18 [button]
 
-set_property PACKAGE_PIN AR22 [led_0]
-set_property IOSTANDARD LVCMOS15 [led_0]
+set_property PACKAGE_PIN BC21 [led_0]
+set_property IOSTANDARD LVCMOS18 [led_0]
 
-set_property PACKAGE_PIN AR22 [led_1]
-set_property IOSTANDARD LVCMOS15 [led_1]
+set_property PACKAGE_PIN BB21 [led_1]
+set_property IOSTANDARD LVCMOS18 [led_1]
 
-set_property PACKAGE_PIN AR22 [led_2]
-set_property IOSTANDARD LVCMOS15 [led_2]
+set_property PACKAGE_PIN BA20 [led_2]
+set_property IOSTANDARD LVCMOS18 [led_2]
+
+create_clock -name clk_p –period 10.0 [get_ports clk_p]
 
 
 
