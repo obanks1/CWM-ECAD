@@ -43,15 +43,40 @@ module top(
       );
 
 	//Add logic here
+	reg [31:0] counter = 0;
+	reg [2:0] newVal = 1;
+	reg [2:0] led = 0;
+	
+	assign led_0 = led[0];
+	assign led_1 = led[1];
+	assign led_2 = led[2];
 
-	always @(posedge clk or posedge rst or posedge button)
-		if(rst == 0 || button == 1) begin
-			led_0 <= 0;
-			led_1 <= 0;
-			led_2 <= 0;
+	always @(posedge clk or posedge rst_n or posedge button)
+		if(rst_n == 0 || button == 1) begin
+			led[0] <= 0;
+			led[1] <= 0;
+			led[2] <= 0;
 		end
 		else begin
-			if(
+			counter <= counter + 1;
+			if(counter > 20) begin
+				led[0] <= newVal;
+			end
+			if(counter > 30) begin
+				led[1] <= newVal;
+			end
+			if(counter > 40) begin
+				led[2] <= newVal;
+			end
+			if(counter > 1000) begin
+				counter <= 0;
+				if(newVal == 0) begin
+					newVal <= 1;
+				end
+				else begin
+					newVal <= 0;
+				end
+			end
 		end
 
 endmodule

@@ -16,6 +16,27 @@ set_property BITSTREAM.CONFIG.SPI_FALL_EDGE YES        [current_design]
 
 #############################################################################################################
 
+set_property PACKAGE_PIN AR22 [clk_p]
+set_property IOSTANDARD LVCMOS15 [clk_p]
+
+set_property PACKAGE_PIN AR22 [clk_n]
+set_property IOSTANDARD LVCMOS15 [clk_n]
+
+set_property PACKAGE_PIN AR22 [rst_n]
+set_property IOSTANDARD LVCMOS15 [rst_n]
+
+set_property PACKAGE_PIN AR22 [button]
+set_property IOSTANDARD LVCMOS15 [button]
+
+set_property PACKAGE_PIN AR22 [led_0]
+set_property IOSTANDARD LVCMOS15 [led_0]
+
+set_property PACKAGE_PIN AR22 [led_1]
+set_property IOSTANDARD LVCMOS15 [led_1]
+
+set_property PACKAGE_PIN AR22 [led_2]
+set_property IOSTANDARD LVCMOS15 [led_2]
+
 
 
 
