@@ -30,9 +30,6 @@ module multiplier (
 		.addra(address),  // input wire [3 : 0] addra
 		.douta(result)  // output wire [15 : 0] douta
 		);
-		
-	
-	
 	
 endmodule
 
