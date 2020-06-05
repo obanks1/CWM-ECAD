@@ -38,7 +38,7 @@ set_property IOSTANDARD LVCMOS18 [led_1]
 set_property PACKAGE_PIN BA20 [led_2]
 set_property IOSTANDARD LVCMOS18 [led_2]
 
-create_clock -name clk_p –period 10.0 [get_ports clk_p]
+create_clock -name clk_p -period 10.0 [get_ports clk_p]
 
 
 
